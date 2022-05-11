@@ -1,0 +1,119 @@
+<button type="button" class="btn" routerLink="/">Back</button>
+<div class="main">
+    <p>Options, slide properties</p>
+
+    <div class="example">
+        <div class="tool">
+            <sirv-media-viewer id="smv-event-test" data-options="autostart: off" [slides]="[
+                {
+                    id: 'test-image',
+                    src: 'https://demo.sirv.com/demo/snug/teal-b-throw.jpg',
+                    type: 'image'
+                },
+                {
+                    id: 'test-spin',
+                    src: 'https://demo.sirv.com/demo/snug/teal.spin'
+                },
+                {
+                    id: 'test-zoom',
+                    src: 'https://demo.sirv.com/demo/snug/unpacked.jpg'
+                }
+            ]">
+            </sirv-media-viewer>
+        </div>
+
+        <div class="code">
+            <div class="wrapper">
+        <pre class="prettyprint">&lt;sirv-media-viewer
+    id="smv-event-test"
+    [slides]="[{{ '{' }}
+        id: 'test-image',
+        src: 'https://demo.sirv.com/demo/snug/teal-b-throw.jpg',
+        type: 'image'
+    {{ '}' }},
+    {{ '{' }}
+        id: 'test-spin',
+        src: 'https://demo.sirv.com/demo/snug/teal.spin',
+    {{ '}' }},
+    {{ '{' }}
+        id: 'test-zoom',
+        src: 'https://demo.sirv.com/demo/snug/unpacked.jpg'
+    {{ '}' }}]"&gt;
+&lt;/sirv-media-viewer&gt;
+    </pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="description">
+        <p >API example</p>
+        <p class="api"><button class="btn" (click)="prev()">Prev</button><button class="btn" (click)="next()">Next</button></p>
+
+        <div class="code">
+            <div class="wrapper">
+                <pre class="prettyprint lang-javascript">@Component({{ '{' }} 
+    selector: 'app-events-api',
+    templateUrl: './events-api.component.html',
+    styleUrls: ['./events-api.component.css']
+{{ '}' }})
+
+export class EventsApiComponent implements AfterViewInit, OnDestroy {{ '{' }} 
+    smv: SMV;
+    viewer: SMVSlider;
+    connections: SMVEvents = {{ '{' }}  {{ '}' }};
+    id: string = 'smv-event-test';
+
+    constructor(private windowObj: GlobalVariable) {{ '{' }} 
+        this.smv = window.Sirv;
+    {{ '}' }}
+
+    ngAfterViewInit(): void {{ '{' }} 
+        this.connections['viewer:ready'] = this.smv.on('viewer:ready', (e: any) => {{ '{' }} 
+            if (e.id === this.id) {{ '{' }} 
+                this.viewer = e;
+                console.log('viewer:ready', e);
+            {{ '}' }}
+        {{ '}' }});
+        this.connections['spin:init'] = this.smv.on('spin:init', (e: any) => {{ '{' }} 
+            if (e.id === 'test-spin') {{ '{' }} 
+                console.log('spin:init', e);
+            {{ '}' }}
+        {{ '}' }});
+        this.connections['zoom:ready'] = this.smv.on('zoom:ready', (e: any) => {{ '{' }} 
+            if (e.id === 'test-zoom') {{ '{' }} 
+                console.log('zoom:ready', e);
+            {{ '}' }}
+        {{ '}' }});
+        this.connections['image:ready'] = this.smv.on('image:ready', (e: any) => {{ '{' }} 
+            if (e.id === 'test-image') {{ '{' }} 
+                console.log('image:ready', e);
+            {{ '}' }}
+        {{ '}' }});
+    {{ '}' }}
+
+    prev(): void {{ '{' }} 
+        if (this.viewer) {{ '{' }} 
+            this.viewer.prev();
+        {{ '}' }}
+    {{ '}' }}
+
+    next(): void {{ '{' }} 
+        if (this.viewer) {{ '{' }} 
+            this.viewer.next();
+        {{ '}' }}
+    {{ '}' }}
+
+    ngOnDestroy(): void {{ '{' }} 
+        this.smv.off('viewer:ready', this.connections['viewer:ready'] ? this.connections['viewer:ready'] : () => {{ '{' }} {{ '}' }});
+        this.smv.off('spin:init', this.connections['spin:init'] ? this.connections['spin:init'] : () => {{ '{' }} {{ '}' }});
+        this.smv.off('zoom:ready', this.connections['zoom:ready'] ? this.connections['zoom:ready'] : () => {{ '{' }} {{ '}' }});
+        this.smv.off('image:ready', this.connections['image:ready'] ? this.connections['image:ready'] : () => {{ '{' }} {{ '}' }});
+    {{ '}' }}
+
+{{ '}' }}
+    </pre>
+            </div>
+        </div>
+    <p>Additional information about events and API you can find into <a href="https://sirv.com/help/articles/sirv-media-viewer/">documentation</a></p>
+    </div>
+</div>

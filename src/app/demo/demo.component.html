@@ -1,0 +1,37 @@
+<div class="main">
+    <h2>Sirv Meadia viewer </h2>
+    <div>
+        Copy and paste this script anywhere in your HTML, usually before
+        <pre class="str">&lt;/head&gt;</pre>
+
+        <div class="wrapper code">
+            <pre>
+    &lt;script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"&gt;&lt;/script&gt;
+            </pre>
+        </div>
+    </div>
+    <p>Using plugin</p>
+    <div class="wrapper code">
+        <pre>
+
+        </pre>
+    </div>
+    <p>Viewer example</p>
+    <div class="example-container">
+        <a *ngFor="let view of viewExamples" routerLink="/{{view.link}}" (click) ="handlerClick($event, view.name)">
+            <div>
+                <span>{{view.name}}</span>
+            </div>
+        </a>
+    </div>
+
+    <p>Lazi image example</p>
+
+    <div class="example-container">
+        <a *ngFor="let item of lazyImageExamples" href="{{item.link}}">
+            <div>
+                <span>{{item.name}}</span>
+            </div>
+        </a>
+    </div>
+</div>
