@@ -1,4 +1,4 @@
-import SMV from './module-smv/interfaces/SMV';
+import SMV from './app/module-smv/interfaces/SMV';
 
 declare global {
     interface Window {

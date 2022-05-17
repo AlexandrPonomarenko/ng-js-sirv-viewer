@@ -16,7 +16,7 @@ export class EventsApiComponent implements AfterViewInit {
     id: string = 'smv-event-test';
 
     constructor() {
-        this.smv = window.Sirv;
+        this.smv = (window as any).Sirv;
     }
 
     ngAfterViewInit(): void {

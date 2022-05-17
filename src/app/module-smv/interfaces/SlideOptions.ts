@@ -1,6 +1,4 @@
 export interface SlideOptions {
-    // init? (obj: Object, sl: SlideAttribute): SlideAttribute,
-    // init (obj: Object): void,
     id?: string,
     src?: string,
     options?: string,
