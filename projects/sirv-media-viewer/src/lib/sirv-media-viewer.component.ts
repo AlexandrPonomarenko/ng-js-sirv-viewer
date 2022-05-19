@@ -1,13 +1,14 @@
 import { Component, Input, OnInit, AfterContentInit, ElementRef, AfterViewInit} from '@angular/core';
-import { HelperService } from '../services/helper.service';
-import { SlideOptions } from '../interfaces/SlideOptions';
+import { HelperService } from './services/helper.service';
+import { SlideOptions } from './interfaces/SlideOptions';
+
 
 @Component({
     selector: 'sirv-media-viewer',
-    templateUrl: './sirv-media-viewer.component.html',
-    styleUrls: ['./sirv-media-viewer.component.css']
+    template: `<ng-content></ng-content>`,
+    styles: [ ]
 })
-export class SirvMediaViewerComponent implements OnInit, AfterContentInit, AfterViewInit {
+export class SirvMediaViewerComponent implements OnInit {
     @Input('slides') listSlides: any[] = [];
     @Input('id') id: string;
     @Input('data-options') dataOptions: string;
@@ -119,5 +120,4 @@ export class SirvMediaViewerComponent implements OnInit, AfterContentInit, After
             this.selector.removeAttribute(attrKey);
         }
     }
-
 }

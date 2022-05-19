@@ -100,6 +100,37 @@
           }
         }
       }
+    },
+    "sirv-media-viewer": {
+      "projectType": "library",
+      "root": "projects/sirv-media-viewer",
+      "sourceRoot": "projects/sirv-media-viewer/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/sirv-media-viewer/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/sirv-media-viewer/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/sirv-media-viewer/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/sirv-media-viewer/src/test.ts",
+            "tsConfig": "projects/sirv-media-viewer/tsconfig.spec.json",
+            "karmaConfig": "projects/sirv-media-viewer/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "ng-js-sirv-viewer"

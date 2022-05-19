@@ -9,9 +9,8 @@
         "build": "ng build",
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
-        "packagr": "ng-packagr -p ng-package.json",
-        "build-module": "ng-packagr -p ./src/app/module-smv/ng-package.json",
-        "pack-module": "cd dist/module-smv && npm pack",
+        "build-module": "ng-packagr -p ./projects/sirv-media-viewer/ng-package.json",
+        "pack-module": "cd dist/sirv-media-viewer && npm pack",
         "package": "npm run build-module && npm run pack-module"
     },
     "license": "MIT",

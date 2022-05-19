@@ -1,7 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
-import SMVSlider from '../module-smv/interfaces/SMVSlider';
-import SMVEvents from '../module-smv/interfaces/SMVEvents';
-import SMV from '../module-smv/interfaces/SMV';
+import SMVSlider from '../../../projects/sirv-media-viewer/src/lib/interfaces/SMVSlider';
+import SMVEvents from '../../../projects/sirv-media-viewer/src/lib/interfaces/SMVEvents';
+import SMV from '../../../projects/sirv-media-viewer/src/lib/interfaces/SMV';
 
 @Component({
     selector: 'app-events-api',
@@ -9,8 +9,7 @@ import SMV from '../module-smv/interfaces/SMV';
     styleUrls: ['./events-api.component.css']
 })
 export class EventsApiComponent implements AfterViewInit {
-
-  smv: SMV;
+    smv: SMV;
     viewer: SMVSlider;
     connections: SMVEvents = {};
     id: string = 'smv-event-test';
