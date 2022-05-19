@@ -1,4 +1,4 @@
-import SMV from './app/module-smv/interfaces/SMV';
+import SMV from '../projects/sirv-media-viewer/src/lib/interfaces/SMV';
 
 declare global {
     interface Window {

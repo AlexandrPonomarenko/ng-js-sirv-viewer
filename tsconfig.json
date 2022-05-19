@@ -16,6 +16,12 @@
             "experimentalDecorators": true,
             "moduleResolution": "node",
             "importHelpers": true,
+            "paths": {
+              "sirv-media-viewer": [
+                "dist/sirv-media-viewer/sirv-media-viewer",
+                "dist/sirv-media-viewer"
+              ]
+            },
             "target": "es2017",
             "module": "es2020",
             "lib": [
