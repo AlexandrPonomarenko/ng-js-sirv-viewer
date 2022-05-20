@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { SlideOptions } from '../interfaces/SlideOptions';
 
-@Injectable()
+@Injectable({ providedIn: 'root'})
+// @Injectable()
 export class HelperService {
     slideAttributes: object = {};
     window: any = window;

@@ -41,7 +41,7 @@ export class SirvMediaViewerComponent implements OnInit {
 
     ngAfterContentInit(): void {
         this.selector.appendChild(this.sirvBlock);
-        this.sirv.start(this.id ? '#' + this.id : '');
+        // this.sirv.start(this.id ? '#' + this.id : '');
     }
 
     ngAfterViewInit(): void {

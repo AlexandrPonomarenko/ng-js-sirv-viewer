@@ -8,6 +8,6 @@ import { HelperService } from './services/helper.service';
     declarations: [ SirvMediaViewerComponent ],
     imports: [ ],
     exports: [ SirvMediaViewerComponent ],
-    providers: [ HelperService ]
+    // providers: [ HelperService ]
 })
 export class SirvMediaViewerModule { }
