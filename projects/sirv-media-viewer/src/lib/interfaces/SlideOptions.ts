@@ -5,9 +5,9 @@ export interface SlideOptions {
     type?: string,
     dataThumbnailImage?: string,
     dataThumbnailHtml?: string,
-    dataDisabled?: string,
-    dataSwipeDisabled?: string,
-    dataHiddenSelecto?: string,
+    dataDisabled?: boolean,
+    dataSwipeDisabled?: boolean,
+    dataHiddenSelector?: boolean,
     dataPinned?: string,
     staticImage?: string
 }

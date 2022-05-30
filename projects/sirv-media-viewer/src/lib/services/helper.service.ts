@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { SlideOptions } from '../interfaces/SlideOptions';
 
-@Injectable()
+@Injectable({ providedIn: 'root'})
+// @Injectable()
 export class HelperService {
     slideAttributes: object = {};
     window: any = window;
@@ -84,12 +85,17 @@ export class HelperService {
 
     setAttributes(node: HTMLElement, slideAttr: SlideOptions): void {
         const listKeys = Object.keys(slideAttr);
-        let keyAttr: string|null;
-        let valueAttr: string| undefined;
+        let keyAttr: string | null;
+        let valueAttr: string | boolean | undefined;
 
         for(let index = 0; index < listKeys.length; index++) {
             keyAttr = this.slideAttributes[listKeys[index] as keyof typeof this.slideAttributes];
             valueAttr = slideAttr[listKeys[index] as keyof typeof slideAttr];
+            if ( typeof valueAttr === 'boolean') {
+                node.setAttribute(keyAttr, '');
+                continue;
+            }
+
             node.setAttribute(keyAttr, valueAttr ? valueAttr : '');
         }
     }
