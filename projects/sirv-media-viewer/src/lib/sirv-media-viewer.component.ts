@@ -23,7 +23,7 @@ export class SirvMediaViewerComponent implements OnInit {
     helper: HelperService;
     SlideAttr: SlideOptions;
     isNodes: boolean = false;
-    slides: Node[] = [];
+    slides: Element[] = [];
 
     constructor(private elementRef: ElementRef, private helperRef: HelperService) {
         this.sirv = helperRef.getWindow().Sirv;
@@ -41,7 +41,7 @@ export class SirvMediaViewerComponent implements OnInit {
 
     ngAfterContentInit(): void {
         this.selector.appendChild(this.sirvBlock);
-        // this.sirv.start(this.id ? '#' + this.id : '');
+        this.sirv.start(this.id ? '#' + this.id : '');
     }
 
     ngAfterViewInit(): void {

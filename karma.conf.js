@@ -32,6 +32,7 @@ module.exports = function (config) {
                 { type: 'text-summary' }
             ]
         },
+        files: ['https://scripts.sirv.com/sirvjs/v3/sirv.js'],
         reporters: ['progress', 'kjhtml'],
         port: 9876,
         colors: true,
