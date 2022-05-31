@@ -68,12 +68,13 @@ describe('SirvMediaViewerComponent', () => {
     });
 
     it('html', () => {
-        const dataHTML = '<div>Hello world</div>';
-        component.listSlides = [{ 'dataThumbnailHtml': dataHTML }];
+        const type = 'html';
+        const src = '<div>Hello world</div>';
+        component.listSlides = [{ 'type': type, 'src': src }];
         component.createSlideNode();
         fixture.detectChanges();
         const createdSlide: Element = component.slides[0];
-        expect(createdSlide.outerHTML).toBe(`<div data-thumbnail-html="${dataHTML}"></div>`);
+        expect(createdSlide.outerHTML).toBe(`<div>${src}</div>`);
     });
 
     it('Other props', () => {
@@ -85,8 +86,7 @@ describe('SirvMediaViewerComponent', () => {
         const thumbnailHtml = '<div>Selector</div>';
         const swipeDisabled = true;
         const hiddenSelector = true;
-
-        component.listSlides = [{ 'src': src, 'id': id, 'dataThumbnailImage': thumbnailImage, 'dataDisabled': slideDisabled, 'dataThumbnailHtml': thumbnailHtml,
+        component.listSlides = [{ 'type': type, 'src': src, 'id': id, 'dataThumbnailImage': thumbnailImage, 'dataDisabled': slideDisabled, 'dataThumbnailHtml': thumbnailHtml,
             'dataSwipeDisabled': swipeDisabled, 'dataHiddenSelector': hiddenSelector }];
         component.createSlideNode();
         fixture.detectChanges();
