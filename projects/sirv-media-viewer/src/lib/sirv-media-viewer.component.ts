@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, AfterContentInit, ElementRef, AfterViewInit} from '@angular/core';
+import { Component, Input, OnInit, AfterContentInit, ElementRef} from '@angular/core';
 import { HelperService } from './services/helper.service';
 import { SlideOptions } from './interfaces/SlideOptions';
 
@@ -44,9 +44,6 @@ export class SirvMediaViewerComponent implements OnInit {
         this.sirv.start(this.id ? '#' + this.id : '');
     }
 
-    ngAfterViewInit(): void {
-    }
-
     createSirvViewer(): void {
         this.sirvBlock = document.createElement('div');
         this.sirvBlock.classList.add('Sirv');
@@ -75,6 +72,8 @@ export class SirvMediaViewerComponent implements OnInit {
             if(data.type === 'image') {
                  typeSlide = 'image'
                  node = document.createElement('img');
+            } else if (typeSlide === 'html' && data.src) {
+                node.innerHTML = data.src;
             }
 
             this.initSlideAttr(data, typeSlide);
@@ -97,19 +96,17 @@ export class SirvMediaViewerComponent implements OnInit {
             return;
         }
 
-        for(let [key, val] of Object.entries(ob)) {
-            if (key === 'options') {
-                val = this.helper.getStringFromObject(val);
-            }
-            this.SlideAttr[key as keyof typeof ob] = val;
-
-        }
+        this.SlideAttr = ob;
 
         if (!this.SlideAttr.type && isZoom) {
             this.SlideAttr.type = this.helper.getTypeComponent(ob['src' as keyof typeof ob].toString());
         }
 
-        if (this.SlideAttr.type && typeSlide === 'image') {
+        if (typeSlide === 'html') {
+            delete this.SlideAttr.src;
+        }
+
+        if (typeSlide !== 'zoom') {
             delete this.SlideAttr.type;
         }
     }
