@@ -1,6 +1,6 @@
 # Angular Sirv Media Viewer
 
-[![Test]()]()
+[![Test](https://github.com/AlexandrPonomarenko/ng-js-sirv-viewer/actions/workflows/test.yml/badge.svg)](https://github.com/AlexandrPonomarenko/ng-js-sirv-viewer/actions/workflows/test.yml)
 
 Easy to use, highly customizable Angular Sirv Media Viewer library.
 
