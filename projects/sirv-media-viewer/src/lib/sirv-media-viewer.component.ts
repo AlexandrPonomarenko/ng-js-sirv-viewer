@@ -102,6 +102,10 @@ export class SirvMediaViewerComponent implements OnInit {
             this.SlideAttr.type = this.helper.getTypeComponent(ob['src' as keyof typeof ob].toString());
         }
 
+        if (this.SlideAttr.options) {
+            this.SlideAttr.options = this.helper.getStringFromObject(this.SlideAttr.options);
+        }
+
         if (typeSlide === 'html') {
             delete this.SlideAttr.src;
         }
