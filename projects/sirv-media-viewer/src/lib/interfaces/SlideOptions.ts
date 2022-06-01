@@ -1,15 +1,13 @@
 export interface SlideOptions {
-    // init? (obj: Object, sl: SlideAttribute): SlideAttribute,
-    // init (obj: Object): void,
     id?: string,
     src?: string,
     options?: string,
     type?: string,
     dataThumbnailImage?: string,
     dataThumbnailHtml?: string,
-    dataDisabled?: string,
-    dataSwipeDisabled?: string,
-    dataHiddenSelecto?: string,
+    dataDisabled?: boolean,
+    dataSwipeDisabled?: boolean,
+    dataHiddenSelector?: boolean,
     dataPinned?: string,
     staticImage?: string
 }

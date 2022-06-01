@@ -1,13 +1,14 @@
-import { Component, Input, OnInit, AfterContentInit, ElementRef, AfterViewInit} from '@angular/core';
-import { HelperService } from '../services/helper.service';
-import { SlideOptions } from '../interfaces/SlideOptions';
+import { Component, Input, OnInit, AfterContentInit, ElementRef} from '@angular/core';
+import { HelperService } from './services/helper.service';
+import { SlideOptions } from './interfaces/SlideOptions';
+
 
 @Component({
     selector: 'sirv-media-viewer',
-    templateUrl: './sirv-media-viewer.component.html',
-    styleUrls: ['./sirv-media-viewer.component.css']
+    template: `<ng-content></ng-content>`,
+    styles: [ ]
 })
-export class SirvMediaViewerComponent implements OnInit, AfterContentInit, AfterViewInit {
+export class SirvMediaViewerComponent implements OnInit {
     @Input('slides') listSlides: any[] = [];
     @Input('id') id: string;
     @Input('data-options') dataOptions: string;
@@ -22,7 +23,7 @@ export class SirvMediaViewerComponent implements OnInit, AfterContentInit, After
     helper: HelperService;
     SlideAttr: SlideOptions;
     isNodes: boolean = false;
-    slides: Node[] = [];
+    slides: Element[] = [];
 
     constructor(private elementRef: ElementRef, private helperRef: HelperService) {
         this.sirv = helperRef.getWindow().Sirv;
@@ -41,9 +42,6 @@ export class SirvMediaViewerComponent implements OnInit, AfterContentInit, After
     ngAfterContentInit(): void {
         this.selector.appendChild(this.sirvBlock);
         this.sirv.start(this.id ? '#' + this.id : '');
-    }
-
-    ngAfterViewInit(): void {
     }
 
     createSirvViewer(): void {
@@ -74,6 +72,8 @@ export class SirvMediaViewerComponent implements OnInit, AfterContentInit, After
             if(data.type === 'image') {
                  typeSlide = 'image'
                  node = document.createElement('img');
+            } else if (typeSlide === 'html' && data.src) {
+                node.innerHTML = data.src;
             }
 
             this.initSlideAttr(data, typeSlide);
@@ -96,19 +96,21 @@ export class SirvMediaViewerComponent implements OnInit, AfterContentInit, After
             return;
         }
 
-        for(let [key, val] of Object.entries(ob)) {
-            if (key === 'options') {
-                val = this.helper.getStringFromObject(val);
-            }
-            this.SlideAttr[key as keyof typeof ob] = val;
-
-        }
+        this.SlideAttr = ob;
 
         if (!this.SlideAttr.type && isZoom) {
             this.SlideAttr.type = this.helper.getTypeComponent(ob['src' as keyof typeof ob].toString());
         }
 
-        if (this.SlideAttr.type && typeSlide === 'image') {
+        if (this.SlideAttr.options) {
+            this.SlideAttr.options = this.helper.getStringFromObject(this.SlideAttr.options);
+        }
+
+        if (typeSlide === 'html') {
+            delete this.SlideAttr.src;
+        }
+
+        if (typeSlide !== 'zoom') {
             delete this.SlideAttr.type;
         }
     }
@@ -119,5 +121,4 @@ export class SirvMediaViewerComponent implements OnInit, AfterContentInit, After
             this.selector.removeAttribute(attrKey);
         }
     }
-
 }

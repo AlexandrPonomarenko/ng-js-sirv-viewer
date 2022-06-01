@@ -13,26 +13,13 @@ import { LazyImageComponent } from './lazy-image/lazy-image.component';
 import { BackgroundImageComponent } from './background-image/background-image.component';
 import { DemoComponent } from './demo/demo.component';
 import { DataService } from './services/data.service';
-import { SmvModule } from './module-smv/module-smv.module';
-// import { routingComponents } from './app-routing.module';
+import { SirvMediaViewerModule } from '../../projects/sirv-media-viewer/src/lib/sirv-media-viewer.module';
 
 @NgModule({
-    declarations: [
-    AppComponent,
-    // DemoComponent
-    // PropsComponent,
-    // SlotsComponent,
-    // SlidePropsComponent,
-    // SlotsOptionsComponent,
-    // ViewFileComponent,
-    // EventsApiComponent,
-    // LazyImageComponent,
-    // BackgroundImageComponent
-    routingComponents,
-    ],
+    declarations: [ AppComponent, routingComponents ],
     imports: [
         BrowserModule,
-        SmvModule,
+        SirvMediaViewerModule,
         AppRoutingModule
     ],
     providers: [DataService],
