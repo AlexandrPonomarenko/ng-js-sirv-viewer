@@ -11,7 +11,7 @@ Copy and paste this script anywhere in your HTML, usually before ```</head>```
 
 ## install
 ```
-npm install 
+npm install sirv-media-viewer
 ```
 ## register as plugin
 ```
