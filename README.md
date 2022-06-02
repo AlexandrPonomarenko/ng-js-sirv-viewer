@@ -11,7 +11,7 @@ Copy and paste this script anywhere in your HTML, usually before ```</head>```
 
 ## install
 ```
-npm install ng-sirv-media-viewer
+npm install an-sirv-media-viewer
 ```
 ## register as plugin
 ```
