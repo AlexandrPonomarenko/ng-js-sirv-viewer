@@ -21,6 +21,9 @@
         "type": "git",
         "url": "https://github.com/AlexandrPonomarenko/ng-js-sirv-viewer.git"
     },
+    "files": [
+        "dist/sirv-media-viewer/**/*"
+    ],
     "keywords": [
         "front-end",
         "web",

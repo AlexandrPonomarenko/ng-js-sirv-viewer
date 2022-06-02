@@ -1,7 +1,5 @@
 # Angular Sirv Media Viewer
 
-[![Test](https://github.com/AlexandrPonomarenko/ng-js-sirv-viewer/actions/workflows/test.yml/badge.svg)](https://github.com/AlexandrPonomarenko/ng-js-sirv-viewer/actions/workflows/test.yml)
-
 Easy to use, highly customizable Angular Sirv Media Viewer library.
 
 Copy and paste this script anywhere in your HTML, usually before ```</head>```
@@ -11,7 +9,7 @@ Copy and paste this script anywhere in your HTML, usually before ```</head>```
 
 ## install
 ```
-npm install sirv-media-viewer
+npm install ng-sirv-media-viewer
 ```
 ## register as plugin
 ```
