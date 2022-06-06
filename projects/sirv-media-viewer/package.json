@@ -1,12 +1,12 @@
 {
-    "name": "npm-sirv-media-viewer",
+    "name": "ng-sirv-media-viewer",
     "version": "0.0.1",
     "description": "Module for Sirv Media Viewer by Angular",
     "author": "alexandr",
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
-        "build": "ng build",
+        "build": "npm run build-module",
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
         "build-module": "ng-packagr -p ng-package.json",
