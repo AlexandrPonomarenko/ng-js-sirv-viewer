@@ -1,6 +1,6 @@
 {
     "name": "ng-sirv-media-viewer",
-    "version": "1.0.0-beta.18",
+    "version": "1.0.0-beta.19",
     "description": "Sirv Media Viewer for Angular",
     "author": "alexandr",
     "scripts": {
@@ -22,7 +22,7 @@
         "url": "https://github.com/AlexandrPonomarenko/ng-js-sirv-viewer.git"
     },
     "files": [
-        "dist/sirv-media-viewer/**/*"
+        "sirv-media-viewer/**/*"
     ],
     "keywords": [
         "front-end",
