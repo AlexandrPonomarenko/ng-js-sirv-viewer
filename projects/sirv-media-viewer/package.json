@@ -6,12 +6,12 @@
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
-        "build": "npm run build-module",
+        "build": "npm run build:smv",
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
-        "build-module": "ng-packagr -p ng-package.json",
-        "pack-module": "cd ../../dist/sirv-media-viewer/ && npm pack",
-        "package": "npm run build-module && npm run pack-module"
+        "build:smv": "ng-packagr -p ng-package.json",
+        "pack:smv": "cd ../../dist/sirv-media-viewer/ && npm pack",
+        "package": "npm run build:smv && npm run pack:smv"
     },
     "private": false,
     "bugs": {
