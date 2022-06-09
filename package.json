@@ -1,6 +1,6 @@
 {
     "name": "ng-sirv-media-viewer",
-    "version": "1.0.0-beta.19",
+    "version": "1.0.0-beta.20",
     "description": "Sirv Media Viewer for Angular",
     "author": "alexandr",
     "scripts": {
@@ -10,7 +10,7 @@
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
         "build:smv": "ng-packagr -p ./projects/sirv-media-viewer/ng-package.json",
-        "pack:smv": "cd dist/sirv-media-viewer && npm pack",
+        "pack:smv": "cd dist && npm pack",
         "package": "npm run build:smv && npm run pack:smv"
     },
     "license": "MIT",
@@ -22,7 +22,7 @@
         "url": "https://github.com/AlexandrPonomarenko/ng-js-sirv-viewer.git"
     },
     "files": [
-        "sirv-media-viewer/**/*"
+        "dist/**/*"
     ],
     "keywords": [
         "front-end",
