@@ -1,9 +1,10 @@
 {
-    "name": "sirv-media-viewer",
-    "version": "1.0.0-beta.22",
+    "name": "ng-sirv-media-viewer",
+    "version": "1.0.0-beta.23",
     "description": "Module for Sirv Media Viewer by Angular",
     "author": "alexandr",
     "private": false,
+    "license": "MIT",
     "bugs": {
         "url": "https://github.com/AlexandrPonomarenko/ng-js-sirv-viewer/issues"
     },
