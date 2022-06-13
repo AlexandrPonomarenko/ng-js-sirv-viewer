@@ -1,0 +1,34 @@
+{
+    "name": "ng-sirv-media-viewer/sirv-media-viewer",
+    "version": "1.0.0-beta.22",
+    "description": "Module for Sirv Media Viewer by Angular",
+    "author": "alexandr",
+    "private": false,
+    "bugs": {
+        "url": "https://github.com/AlexandrPonomarenko/ng-js-sirv-viewer/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/AlexandrPonomarenko/ng-js-sirv-viewer.git"
+    },
+    "keywords": [
+        "front-end",
+        "web",
+        "angular",
+        "angularjs",
+        "angular-js",
+        "sirv",
+        "ng",
+        "viewer",
+        "sirv-media-viewer",
+        "ng-js-sirv-viewer",
+        "ng-viewer"
+    ],
+    "peerDependencies": {
+        "@angular/common": "^13.3.0",
+        "@angular/core": "^13.3.0"
+    },
+    "dependencies": {
+        "tslib": "^2.3.0"
+    }
+}

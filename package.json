@@ -1,6 +1,6 @@
 {
     "name": "ng-sirv-media-viewer",
-    "version": "1.0.0-beta.21",
+    "version": "1.0.0-beta.22",
     "description": "Sirv Media Viewer for Angular",
     "author": "alexandr",
     "scripts": {
@@ -9,7 +9,7 @@
         "build": "npm run build:smv",
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
-        "build:smv": "ng-packagr -p ng-package.json",
+        "build:smv": "ng-packagr -p ./projects/sirv-media-viewer/ng-package.json",
         "pack:smv": "cd dist && npm pack",
         "package": "npm run build:smv && npm run pack:smv"
     },
