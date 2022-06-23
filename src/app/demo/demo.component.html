@@ -13,7 +13,14 @@
     <p>Using plugin</p>
     <div class="wrapper code">
         <pre>
+    import {{ '{' }} SirvMediaViewerModule {{ '}' }} from 'ng-sirv-media-viewer';
 
+    @NgModule({{ '{' }}
+        declarations: [ ... ],
+        imports: [ SirvMediaViewerModule ],
+        providers: [...],
+        bootstrap: [ ... ]
+    {{ '}' }})
         </pre>
     </div>
     <p>Viewer example</p>

@@ -13,7 +13,7 @@ npm install ng-sirv-media-viewer
 ```
 ## register as plugin
 ```
-import { SirvMediaViewerModule } from 'sirv-media-viewer';
+import { SirvMediaViewerModule } from 'ng-sirv-media-viewer';
 
 @NgModule({
     declarations: [ ... ],
@@ -56,6 +56,6 @@ Object has additional props:
   * `dataPinned` - Pinned selector [String]. The available props are: `left`, `right`
   * `staticImage` - Static image [Boolean].
 
-[Examples](https://test1.sirv.com)
+[Examples](https://test1.sirv.com/alex-test-pages/ng-smv/index.html)
 
 [Sirv Media Viewer documentation](https://sirv.com/help/articles/sirv-media-viewer/)
